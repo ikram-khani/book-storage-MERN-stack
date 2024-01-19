@@ -19,21 +19,10 @@ app.use(express.json());
 
 
 
-app.get('/', async (req, res) => {
-    try {
-      // Fetch all books from the database
-      const allBooks = await Book.find({});
-      
-      // Send the list of books as a response
-      return res.status(200).json({
-        count: allBooks.length,
-        data: allBooks
-      });
-    } catch (error) {
-      console.error('Error fetching books', error);
-      return res.status(500).send('Internal Server Error');
-    }
-  });
+app.get('/', (req, res) => {
+    console.log(req);
+    return res.status(234).send('Welcome to MERN Stack');
+})
 
 //middleware for routing
 app.use('/books', booksRoute);
