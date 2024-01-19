@@ -39,7 +39,7 @@ app.get('/', async (req, res) => {
 app.use('/books', booksRoute);
 app.use('/users', userRoutes);
 
-mongoose.connect(mongoDBURL).then(() => {
+mongoose.connect('mongodb+srv://ikr302000:32WzigXcCxd8XPF@cluster0.q5liuvd.mongodb.net/books-collection?retryWrites=true&w=majority').then(() => {
 console.log('App connected to database');
 
 app.listen(port, () => {
